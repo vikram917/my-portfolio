@@ -1,36 +1,55 @@
-import InfiniteScroll from "@/components/InfiniteScroll";
-import React, { lazy, Suspense } from "react";
 
-const Intro = lazy(() => import("./intro/page"));
-const Home = lazy(() => import("./home/page"));
-const AboutPage = lazy(() => import("./about/page"));
-const Contacts = lazy(() => import("./contact/page"));
-const ExperiencePage = lazy(() => import("./experience/page"));
+import {
+  faGithub,
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
-const pageContents = [
-  <Suspense key="intropage" fallback={<div>Loading...</div>}>
-    <Intro />
-  </Suspense>,
-  <Suspense key="Homepage" fallback={<div>Loading...</div>}>
-    <Home />
-  </Suspense>,
-  <Suspense key="Aboutpage" fallback={<div>Loading...</div>}>
-    <AboutPage />
-  </Suspense>,
-  <Suspense key="Experiencepage" fallback={<div>Loading...</div>}>
-    <ExperiencePage />
-  </Suspense>,
-  <Suspense key="Contactform" fallback={<div>Loading...</div>}>
-    <Contacts />
-  </Suspense>,
-];
-
-const Index = () => {
+const Intro = () => {
+  
   return (
-    <div>
-      <InfiniteScroll pages={pageContents} />
+    <div className="flex h-full w-full p-20">
+      <div className="w-full h-full flex flex-col justify-center items-end space-y-2 lg:space-y-4 xl:space-y-4">
+        <div className="">
+          <h1 className="text-3xl lg:text-6xl xl:text-9xl font-semibold">Portfolio</h1>
+          <hr className="w-full" />
+        </div>
+        <h1 className="text-xl lg:text-2xl xl:text-4xl font-semibold">By Vikram</h1>
+        <div className=" text-gray-600 space-x-2 lg:space-x-4 xl:space-x-4">
+          <a href="https://github.com/vikram917">
+            <FontAwesomeIcon
+              icon={faGithub}
+              className="h-6 md:h-8 lg:h-10 xl:h-10 transform hover:translate-x-[-5px] transition duration-300 ease-in-out"
+            />
+          </a>
+
+          <a href="https://www.instagram.com/_hollow068/">
+            <FontAwesomeIcon
+              icon={faInstagram}
+              className="w-6 h-6 md:w-8 md:h-8 lg:h-10 lg:w-10 xl:h-10 xl:w-10 transform hover:translate-x-[-5px] transition duration-300 ease-in-out"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/vikrambaghel917/">
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="w-6 h-6 md:w-8 md:h-8 lg:h-10 lg:w-10 xl:h-10 xl:w-10 transform hover:translate-x-[-5px] transition duration-300 ease-in-out"
+            />
+          </a>
+          <a href="https://twitter.com/Vikramb28256747">
+            <FontAwesomeIcon
+              icon={faTwitter}
+              className="w-6 h-6 md:w-8 md:h-8 lg:h-10 lg:w-10 xl:h-10 xl:w-10 transform hover:translate-x-[-5px] transition duration-300 ease-in-out"
+            />
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Index;
+export default Intro;
+
+
