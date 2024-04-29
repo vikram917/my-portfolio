@@ -1,4 +1,4 @@
-import BackgroundCircles from "@/components/BackgroundCircles";
+
 import Hero from "@/components/Hero";
 import React from "react";
 

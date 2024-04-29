@@ -2,8 +2,6 @@ import { Lora } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
-import BackgroundCircles from "@/components/BackgroundCircles";
-import Head from "next/head";
 import Image from "next/image";
 import bg from "../../public/bg.png"
 const nutino = Lora({ subsets: ["latin"] });
@@ -18,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${nutino.className} flex flex-col h-screen w-screen text-slate-300 relative`}>
-      <Image src={bg} alt="" className="absolute -z-10" />
+    
         <div className="p-2 w-full xl:p-10 h-full">
           <div className="w-full h-full backdrop-blur-sm flex flex-row justify-evenly items-center bg-slate-50/2 border border-slate-600  shadow-lg rounded-lg ">
             <div className="h-full w-10 xl:w-20 flex flex-col items-center justify-center">
